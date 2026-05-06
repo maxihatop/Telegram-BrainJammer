@@ -1,6 +1,7 @@
 # **Telegram BrainJammer: README**
 
 Scammers using profiles with photos of beautiful Asian women are crawling out of every corner of the internet. Blocking them is the best thing you can do *for them*—it simply allows them to move on to their next victim immediately. However, "jamming" their brains by forcing them to waste days chatting with an AI bot is not only entertaining but also saves innocent people by keeping the scammers occupied.
+
 **Note:** This project and its documentation intentionally promote a lack of sympathy toward the social group known as "crypto-scammers."
 
 ## ---
@@ -22,12 +23,17 @@ Ensure you have telegram-brainjammer.py and config.py in your project folder.
 
 It is highly recommended to use a virtual environment to keep your global Python installation clean.
 `# Create the virtual environment`
+
 `python3 -m venv venv`
 
 `# Activate the virtual environment`
+
 `# On Linux/macOS:`
+
 `source venv/bin/activate`
+
 `# On Windows:`
+
 `.\\venv\\Scripts\\activate`
 
 ### **3\. Install Dependencies**
@@ -43,8 +49,11 @@ The script expects a file named config.py in the same directory.
 
 Create a file named config.py and populate it with your credentials:
 `# config.py`
+
 `API_ID = 1234567          # Your Telegram API ID`
+
 `API_HASH = 'your_hash'    # Your Telegram API HASH`
+
 `OPENAI_API_KEY = 'sk-...' # Your OpenAI API Key`
 
 ### **How to obtain the keys:**
@@ -75,5 +84,5 @@ The script will prompt you for your phone number on the first run to authorize t
 
 ## **Real-World "Brain-Jamming" Example**
 
-The repository includes log files (e.g., Maggie-Lee.txt) that demonstrate a typical two-day scam cycle. You can observe how the scammer adopts a persona of a successful, attractive woman, building rapport by discussing Thai beaches, Vietnamese cuisine, and daily routines. The "social engineering" phase is extensive, designed to establish a false sense of intimacy. However, once the conversation shifts to pitching "AI smart plans" or "on-chain wallets," the AI bot maintains its cautious, technical persona. The transition from friendly banter to aggressive gaslighting and eventual insults (when the scammer realizes the "retired engineer" won't bite) is a classic example of why this tool is necessary—it turns their own psychological tactics against them, wasting their most valuable resource: time.
+The repository includes log files (e.g., *Maggie-Lee.txt*) that demonstrate a typical two-day scam cycle. You can observe how the scammer adopts a persona of a successful, attractive woman, building rapport by discussing Thai beaches, Vietnamese cuisine, and daily routines. The "social engineering" phase is extensive, designed to establish a false sense of intimacy. However, once the conversation shifts to pitching "AI smart plans" or "on-chain wallets," the AI bot maintains its cautious, technical persona. The transition from friendly banter to aggressive gaslighting and eventual insults (when the scammer realizes the "retired engineer" won't bite) is a classic example of why this tool is necessary—it turns their own psychological tactics against them, wasting their most valuable resource: time.
 
