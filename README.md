@@ -76,6 +76,14 @@ Once configured and the venv is active, run the script:
 
 The script will prompt you for your phone number on the first run to authorize the Telegram session. After that, it will stay active and "jam" any scammer who tries their luck.
 
+Once the script is running, it connects to your Telegram account. To manage the bot within a specific chat:
+
+ - Type `..r` (run) to activate the jammer for that chat.
+ - Type `..s` (stop) to deactivate it.
+
+
+
+
 ## **Required Libraries**
 
 * **Telethon:** For interacting with the Telegram API as a user client.
