@@ -9,7 +9,7 @@ Scammers using profiles with photos of beautiful Asian women are crawling out of
 **Features**
 
 * **Automated Engagement:** Automatically responds to incoming messages.
-* **AI-Powered Persona:** Uses OpenAI to maintain a consistent, cautious, and slightly eccentric persona (e.g., "Oleg Igorevich," a retired engineer).
+* **AI-Powered Persona:** Uses OpenAI to maintain a consistent, cautious, and slightly eccentric persona (e.g., "Oleg Ivanovich," a retired engineer).
 * **Human-like Delays:** Implements random delays to mimic human typing speeds and frustrate automated scam scripts.
 * **Brain-Jamming Logic:** Specifically designed to lead scammers into technical dead-ends and psychological frustration.
 
