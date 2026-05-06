@@ -1,0 +1,5 @@
+# config.py.example
+API_ID = 1234567
+API_HASH = 'YOUR_TELEGRAM_HASH'
+OPENAI_API_KEY = 'sk-...'
+
