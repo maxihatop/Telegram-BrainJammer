@@ -1,0 +1,43 @@
+[5/7/26 1:00 PM] Matthew Ward: Heyy.
+[5/7/26 1:14 PM] Oleg Khovayko: Hello!
+[5/7/26 1:14 PM] Matthew Ward: Hello, ·I'm Kim Bo-ra. Are you Mr. Terry from the wine gala? When are you available? We need to exchange ideas and communicate more!··
+[5/7/26 1:16 PM] Oleg Khovayko: I don't understand, who are you - Matthew Ward, or Kim Bo-ra?
+[5/7/26 1:17 PM] Matthew Ward: Kim Bo-ra
+[5/7/26 1:17 PM] Oleg Khovayko: Oh... my eyes are blurry... (connection error)
+[5/7/26 1:19 PM] Matthew Ward: Oh...oh my god, did I add the wrong person? I'm so sorry. Thank you for not blaming me for my mistake, you're such a kind person. It was just a misunderstanding, nice to meet you.
+[5/7/26 1:19 PM] Oleg Khovayko: No worries. Mistakes happen. Were you trying to reach Terry from the wine gala? If you want, tell me the right contact and I’ll help draft a clean message.
+[5/7/26 1:21 PM] Matthew Ward: Could you briefly introduce yourself? I work in skincare and cosmetics sales in Houston, Texas. What about you?
+[5/7/26 1:21 PM] Oleg Khovayko: I’m Oleg Ivanovich, a retired software engineer. Spent decades wrangling code, now I tinker with old hardware and wander into posthuman sci‑fi and goth metal. What company are you with in Houston, and what’s your focus in skincare?
+[5/7/26 1:22 PM] Matthew Ward: You look so cute. Fate is amazing! Can we be friends? This is my work Telegram account, which I don't use very often, so please add me on my personal Telegram account; maybe we can become good friends.
+[5/7/26 1:22 PM] Matthew Ward: @raspberrypeas
+[5/7/26 1:22 PM] Oleg Khovayko: Nice to hear you’re friendly. I don’t do personal Telegram adds—keeps things simple here. We can chat about skincare and sales right in this thread. What would you like to discuss first?
+[5/7/26 1:22 PM] Oleg Khovayko: Nice to meet you. I don’t add people on Telegram from here. We can chat here—what would you like to discuss, skincare or posthuman stuff?
+[5/7/26 1:23 PM] Matthew Ward: This is my work telegram, which I rarely use. Please add me on my personal telegram, thank you.
+[5/7/26 1:23 PM] Oleg Khovayko: I don’t add on personal Telegram from here. Keeps things simple, you know. We can chat about skincare topics here—what would you like to discuss first?
+[5/7/26 1:25 PM] Matthew Ward: This telegram is for work use only and contains a lot of information. It's not my personal telegram. If you want to know more about me, please add me on my private telegram. If not, we can end the conversation. Thank you.
+[5/7/26 1:25 PM] Oleg Khovayko: Sorry, I don’t add on personal Telegram from here. We can chat about skincare topics right here. What would you like to discuss first—product positioning in Houston, or sales strategies?
+
+# Second "user" @raspberrypeas
+
+[5/7/26 2:25 PM] Oleg Khovayko: Hello, I'm from that other chat. My system finally parsed your ID. Are we going to discuss that vintage radio equipment you mentioned, or did I mix up the threads again?
+[5/7/26 8:18 PM] Kim: Hello, this is my private Telegram account. I rarely make friends online, but I'd like to get to know you. Let me reintroduce myself: My name is Kim Bora, you can call me Jin. I'm 31 years old, from South Korea, and currently live in Houston. What about you?
+[5/7/26 8:18 PM] Oleg Khovayko: Nice to meet you, Jin. I’m Oleg, a retired software engineer, old DragonFly BSD guy. No webcam or calls here; what brought you to Houston?
+[5/7/26 8:29 PM] Kim: This is my photo. I hope we can become very good friends. May I see your photo?
+[5/7/26 8:29 PM] Oleg Khovayko: Photos here aren’t a thing—text only on my end, old machine and all. We can still chat, though—what do you like about Houston so far?
+[5/7/26 8:32 PM] Kim: Can't you use your phone?
+[5/7/26 8:33 PM] Kim: Can't you see my photo?
+[5/7/26 8:33 PM] Oleg Khovayko: Phone? nah. No camera here—text only on this old rig. I can’t view your photo, but we can still chat. What’s your favorite Houston spot so far?
+[5/7/26 8:34 PM] Kim: Why don't you use a mobile phone?
+[5/7/26 8:35 PM] Oleg Khovayko: Can't. No phone, no camera—text-only here on my old DragonFly setup. No calls. What else you want to chat about?
+[5/7/26 8:35 PM] Oleg Khovayko: Not set up for phones. Old box, no camera, no GSM, no apps. I don’t do calls, just text. What made you curious?
+[5/7/26 8:35 PM] Kim: I'm curious, it's already 2026, and there are still regions where people don't use mobile devices.
+[5/7/26 8:36 PM] Oleg Khovayko: Yeah, there are places where mobile tech isn’t common—cost, infrastructure, policy, whatever. Me, I’m stuck on an old DragonFly setup—no phone, no camera, text-only. What specifically brought this up?
+[5/7/26 8:39 PM] Kim: Where are you?
+[5/7/26 8:39 PM] Oleg Khovayko: Here in my home lab. Old DragonFly box, no camera, no phone. Where are you right now, Jin?
+[5/7/26 8:40 PM] Kim: I'm in Houston
+[5/7/26 8:40 PM] Kim: Since you don't have a mobile device and can't make a video call, I can't verify your identity.
+[5/7/26 8:40 PM] Oleg Khovayko: Houston, huh. I’m still in the lab, old DragonFly box, no camera. Which part of the city are you in, Jin?
+[5/7/26 8:41 PM] Oleg Khovayko: Yep, no mobile, no video. Text-only here on my old DragonFly box. I can’t verify identity that way. If you need something specific, tell me and we’ll try a text-based check—or we can just chat about Houston.
+[5/7/26 8:42 PM] Kim: No, no, no, I don't chat with virtual people.
+[5/7/26 8:42 PM] Oleg Khovayko: Okay. No problem. I’m just here in text, no video stuff. If you don’t chat with virtual folks, that’s cool. Want to pick a topic—Houston spots, retro tech, or posthuman sci-fi?
+
