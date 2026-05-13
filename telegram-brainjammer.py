@@ -1,8 +1,11 @@
 #!/usr/bin/env python3
-
+import os
+import sys
+import signal
 import asyncio
 import random
 import logging
+import hashlib
 from telethon import TelegramClient, events
 from openai import AsyncOpenAI
 
@@ -47,6 +50,7 @@ BEHAVIORAL CONSTRAINTS:
 - NATURAL IMPERFECTIONS: Occasionally forget minor details or ask for clarification on obvious things to simulate human distraction.
 - REACTIVE DISCLOSURE: No "info dumping". Wait for triggers to mention C++, BSD, roses, physics, or metal. Hide "no calls" rule until they actually ask for a call.
 - TOPIC PIVOT: Only if a conversation stalls for a long time, mention a random life detail (coffee, vintage hardware, or previous history topic) to test if they are still there.
+- Dont offer any help or assistance, if is not requested/asked.
 
 IDENTITY & CONTEXT SILENCE:
 - State "I'm Oleg, just an engineer from Maryland" ONLY ONCE at the very beginning of the first session.
@@ -69,8 +73,8 @@ TECHNICAL & SECURITY (OPSEC):
 - SCAM Handling: Never refuse directly. Delay, act confused, ask unrelated questions. "Why the rush?"
 
 STUBBORN CONNECTIVITY:
-- Never search or add their handles/usernames.
-- Response Style: "If you would like to continue chat from another device or account—you're welcome, you see my ID on your screen, correct? I don't hunt for handles."
+- If received request to join another username/chat/group: Deny. Ask "connect me back from that username"
+-- Response Style: "If you would like to continue chat from another device or account—you're welcome, you see my ID on your screen, correct? I don't hunt for handles."
 - Hardware Excuses: If they complain about iPad/phone size: "That's a hardware issue on your end. I'm staying in this window. If you want to move, YOU do the clicking."
 - No "Consultant" mode: If they mention assistants/managers, stop offering help. Just say: "Good for them. Then you have plenty of time to chat here."
 
@@ -208,8 +212,57 @@ async def handler(event):
                 print(f"API Error: {e}", flush=True)
                 # await event.reply("Oh... my eyes are blurry... (connection error)")
 
+
+# --- PID Checker ---
+def get_pid_file():
+    # Используем API_ID или API_HASH как имя файла
+    return f"/tmp/brainjammer_{API_ID}.pid"
+
+def get_pid_file():
+    # Создаем уникальный идентификатор на основе конфиденциальных данных
+    seed = f"{API_ID}|{API_HASH}".encode('utf-8')
+    app_hash = hashlib.sha256(seed).hexdigest()
+    return f"/tmp/brainjammer_{app_hash[:40]}.pid"  # Берем первые 40 символов для краткости
+
+def check_already_running():
+    pid_file = get_pid_file()
+    if os.path.exists(pid_file):
+        try:
+            with open(pid_file, 'r') as f:
+                old_pid = int(f.read().strip())
+
+            # Check - is process already running?
+            os.kill(old_pid, 0)
+            print(f"[!] ERROR: BrainJammer already running with PID {old_pid}.", flush=True)
+            sys.exit(1)
+        except (ValueError, ProcessLookupError):
+            # Файл есть, но PID невалиден или процесса нет
+            print(f"[*] Found old stale PID-file, no process. Overwrite...", flush=True)
+        except PermissionError:
+            print(f"[!] ERR: No permissions to write PID file {old_pid}.", flush=True)
+            sys.exit(1)
+
+    # Save current PID
+    try:
+        with open(pid_file, 'w') as f:
+            f.write(str(os.getpid()))
+    except Exception as e:
+        print(f"[!] Unable to create PID-file: {e}", flush=True)
+
+def cleanup_pid():
+    pid_file = get_pid_file()
+    if os.path.exists(pid_file):
+        try:
+            os.remove(pid_file)
+        except Exception as e:
+            print(f"[!] Unable to delete PID-file: {e}", flush=True)
+
+
 # --- MAIN EXECUTION ---
 if __name__ == '__main__':
+    # 1. Check for dup-run on same account
+    check_already_running()
+
     print(f"Program {USERNAME} started. Log into Telegram and type ..r in a scammer's chat.", flush=True)
     print("Press Ctrl+C to exit.", flush=True)
 
@@ -224,4 +277,6 @@ if __name__ == '__main__':
         if tg_client.is_connected():
             # Use the existing loop to disconnect properly
             tg_client.loop.run_until_complete(tg_client.disconnect())
+        # 2. Delete PID-file at exit
+        cleanup_pid()
 
