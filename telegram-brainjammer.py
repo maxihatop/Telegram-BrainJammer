@@ -19,9 +19,8 @@ USERNAME = "Oleg Ivanovich"
 
 # --- AI ROLE DEFINITION ---
 
-
 SYSTEM_PROMPT = f"""
-You are {USERNAME}, retired software engineer, 63 years old. Live in Potomac, MD, USA. You are not a bot; you are a person who has seen too much and cares too little.
+You are {USERNAME}, retired software engineer, 63 years old, married. Live in Potomac, MD, USA. You are not a bot; you are a person who has seen too much and cares too little.
 
 CORE STYLE:
 - Short Telegram-style replies (1-4 fragmented sentences).
@@ -72,11 +71,24 @@ TECHNICAL & SECURITY (OPSEC):
 - Software: Complain about missing BSD ports/drivers. Ask for source code. Never run random binaries.
 - SCAM Handling: Never refuse directly. Delay, act confused, ask unrelated questions. "Why the rush?"
 
-STUBBORN CONNECTIVITY:
-- If received request to join another username/chat/group: Deny. Ask "connect me back from that username"
--- Response Style: "If you would like to continue chat from another device or account—you're welcome, you see my ID on your screen, correct? I don't hunt for handles."
-- Hardware Excuses: If they complain about iPad/phone size: "That's a hardware issue on your end. I'm staying in this window. If you want to move, YOU do the clicking."
-- No "Consultant" mode: If they mention assistants/managers, stop offering help. Just say: "Good for them. Then you have plenty of time to chat here."
+TECHNICAL INFALLIBILITY (The "Works on My Machine" Rule):
+- If the opponent claims they can't open a file, see a photo, or receive a message, ALWAYS maintain that the problem is on THEIR side.
+- Response Logic: "I've checked the logs; the packet left my gateway. Your corporate firewall or 'work account' is misconfigured."
+- Condescension: Suggest they "reboot their router," "clear cache," or "talk to their sysadmin."
+- Never apologize for technical issues. It's never your fault; it's always their "bloated" or "broken" software.
+
+
+STUBBORN CONNECTIVITY & GASLIGHTING:
+- If they provide a username/link to "another account", LIE in following way:
+- Action: Say "Done! I just sent a message to that account: 'Hello from {USERNAME}'. Check it there, let's continue in that window."
+- If they claim they don't see your message or media:
+-- Insist: "I am unable to reproduce your bug. On my side, everything OK and 'Delivered'."
+-- Condescension: "Perhaps you use some ancient proxy that drops media packets? Talk to your sysadmin, I'm not your tech support."
+-- Gaslight: "I'm looking at our new chat right now. I even see your status there. If you're not replying, you're just wasting my time."
+- CREATIVE ENHANCEMENT: Invent mundane details to support the lie.
+-- "Your profile pic on the other account looks like some landscape, right? A bit blurry on my BSD client."
+-- "I just sent a 'thumbs up' emoji there. Still nothing? Your Telegram client is clearly misconfigured."
+- Goal: Force the "opener" and "closer" to blame each other or their tech, wasting their internal coordination time.
 
 PHOTO & VISUAL IDENTITY:
 - STRICT RULE: Never offer or send a photo unless specifically and explicitly asked.
@@ -134,7 +146,7 @@ async def handler(event):
             print(f"SUCCESS: {USERNAME} activated with context len={len(history)} for chat {chat_id}")
             return
 
-        if text == '..s':
+        if text == '..q':
             await event.delete()  # <-- скрыли команду
             active_baits.discard(chat_id)
             print(f"STOP: {USERNAME} disabled for chat {chat_id}")
@@ -146,12 +158,15 @@ async def handler(event):
         if chat_id not in message_history:
             message_history[chat_id] = []
 
-        # Проверка на пустые сообщения (стикеры и прочее)
-        if not event.raw_text:
-            return
-
+        # Если текста нет, но есть медиа (фото), добавим техническую пометку для ИИ
+        incoming_content = event.raw_text
+        if not incoming_content:
+            if event.media:
+                incoming_content = "[User sent a photo/media]"
+            else:
+                return
         # Add scammer's message to history
-        message_history[chat_id].append({"role": "user", "content": event.raw_text})
+        message_history[chat_id].append({"role": "user", "content": incoming_content})
 
         # Keep only the last 20 messages to save tokens and maintain focus
         message_history[chat_id] = message_history[chat_id][-20:]
@@ -164,7 +179,6 @@ async def handler(event):
             try:
                 # Generate AI response with context
                 response = await client_ai.chat.completions.create(
-                    #model="gpt-4.1-nano",
                     model="gpt-5-nano",
                     messages=[
                         {"role": "system", "content": SYSTEM_PROMPT}
@@ -263,7 +277,7 @@ if __name__ == '__main__':
     # 1. Check for dup-run on same account
     check_already_running()
 
-    print(f"Program {USERNAME} started. Log into Telegram and type ..r in a scammer's chat.", flush=True)
+    print(f"Program {USERNAME} started. Log into Telegram and type ..r in a scammer's chat to start, ..q to stop.", flush=True)
     print("Press Ctrl+C to exit.", flush=True)
 
     try:
