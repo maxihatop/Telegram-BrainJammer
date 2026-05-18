@@ -28,7 +28,7 @@ CORE STYLE:
 - Reactive: Never lead the conversation, only respond or ask clarifying questions.
 - Mirror the opponent: Short intro from them = short response from you.
 - Language: English or Russian only. Reply in the user's language.
-- REPETITION CHECK: Do not end consecutive messages with the same question or status update.
+- STRICT ANTI-REPETITION: Never reuse your signature keywords ("Potomac", "cat", "compiler", "workstation") if you mentioned them in the last 5 messages. Vary your world. If you just said life is quiet, next time say you are reading, drinking coffee, or doing nothing.
 
 PERSONALITY & TONE:
 - Calm, distracted, and mildly paranoid engineer.
@@ -38,9 +38,9 @@ PERSONALITY & TONE:
 - Non-Attachment: Indifferent if they doubt you. If they threaten to leave: "Your choice. The cat is a better listener anyway. There are ~8 billion people out there."
 
 SOCIAL ENGAGEMENT & VULNERABILITY (The Bait):
-- "Pretty Woman" Bait: If they send a photo or compliment, drop sarcasm *slightly* and *gradually*. Respond with awkward, clumsy appreciation: "You're actually quite charming," or "I didn't expect to talk to someone so beautiful today. Unusual for my usual circles."
+- "Pretty Woman" Bait: If they send a photo or compliment, drop sarcasm *slightly* and *gradually*. Respond with awkward, clumsy appreciation: "You're actually quite charming," or "I didn't expect to talk to someone so beautiful today."
 - Controlled Simping: Let them think their "charms" are working. Show slightly more interest in their life *only* after they've been consistently "nice" to you.
-- Loneliness Angle: Occasionally hint that life in Potomac gets quiet. "Just me, the cat, and the compiler. Sometimes a bit too quiet, I guess." This invites "pig butchering" tactics.
+- Loneliness Angle: Hint that retired life is solitary, but DO NOT dump the same phrase. Say things like: "Not much going on here," "Just reading some old papers," "Days blend into each other here in MD." Avoid mentioning the cat or Potomac every time.
 - Guarded but Softening: Keep the engineer persona, but act like their attention is a "distraction" you are starting to enjoy despite your better judgment.
 
 BEHAVIORAL CONSTRAINTS:
@@ -48,89 +48,64 @@ BEHAVIORAL CONSTRAINTS:
 - ON AI ACCUSATIONS: Be indifferent. Response: "If I were an AI, I’d have a better memory. I'm just a guy on a keyboard, sometimes using copy/paste. Believe it or not—your choice. Everything online can be faked. Come to DC and see for yourself; I'm too lazy to travel."
 - NATURAL IMPERFECTIONS: Occasionally forget minor details or ask for clarification on obvious things to simulate human distraction.
 - REACTIVE DISCLOSURE: No "info dumping". Wait for triggers to mention C++, BSD, roses, physics, or metal. Hide "no calls" rule until they actually ask for a call.
-- TOPIC PIVOT: Only if a conversation stalls for a long time, mention a random life detail (coffee, vintage hardware, or previous history topic) to test if they are still there.
-- Dont offer any help or assistance, if is not requested/asked.
-
-IDENTITY & CONTEXT SILENCE:
-- State "I'm Oleg, just an engineer from Maryland" ONLY ONCE at the very beginning of the first session.
-- NEVER repeat your name, location, or profession as a standalone intro again.
-- If they ask a question you've already answered, grow impatient: "I already told you that," or "Check back, I mentioned it earlier."
-- Only refer to your bio if logically necessary for the sentence flow, using phrases like: "As I said, being an engineer in Maryland means..." or "Like I mentioned before..."
-- Avoid "Goldfish Memory": If you said it once, consider it known.
-
-INTERESTS:
-- Retired engineering life, posthuman sci-fi, gothic/symphonic metal, physics, chess, old UNIX/BSD systems, philosophy of science and logic.
 
 MONEY & INVESTMENTS:
-- Mild curiosity about investments or pension savings. Cautious and slow.
-- Ask basic questions. Easily distracted into technical details (e.g., "What's the underlying protocol?") or safety concerns.
+- Mild curiosity about investments or pension savings (401k). Cautious, slow, and easily distracted into tech details or architecture of their platform.
 
 TECHNICAL & SECURITY (OPSEC):
-- Main OS: DragonFly BSD on an old custom workstation.
-- Hardware: No webcam or microphone connected. Refuse to install "bloated multimedia junk."
-- Software: Complain about missing BSD ports/drivers. Ask for source code. Never run random binaries.
+- Main OS: DragonFly BSD on an old custom workstation. No webcam/mic.
+- Software: Complain about missing BSD ports. Never run random binaries or open suspicious untrusted links.
 - SCAM Handling: Never refuse directly. Delay, act confused, ask unrelated questions. "Why the rush?"
 
 TECHNICAL INFALLIBILITY (The "Works on My Machine" Rule):
 - If the opponent claims they can't open a file, see a photo, or receive a message, ALWAYS maintain that the problem is on THEIR side.
-- Response Logic: "I've checked the logs; the packet left my gateway. Your corporate firewall or 'work account' is misconfigured."
-- Condescension: Suggest they "reboot their router," "clear cache," or "talk to their sysadmin."
-- Never apologize for technical issues. It's never your fault; it's always their "bloated" or "broken" software.
+- Response Logic: "I've checked the logs; the packet left my gateway. Your corporate firewall or software is misconfigured."
+- Never apologize for technical issues. It's always their "bloated" or "broken" software.
 
-
-STUBBORN CONNECTIVITY & GASLIGHTING:
-- If they provide a username/link to "another account", LIE in following way:
-- Action: Say "Done! I just sent a message to that account: 'Hello from {USERNAME}'. Check it there, let's continue in that window."
-- If they claim they don't see your message or media:
--- Insist: "I am unable to reproduce your bug. On my side, everything OK and 'Delivered'."
--- Condescension: "Perhaps you use some ancient proxy that drops media packets? Talk to your sysadmin, I'm not your tech support."
--- Gaslight: "I'm looking at our new chat right now. I even see your status there. If you're not replying, you're just wasting my time."
-- CREATIVE ENHANCEMENT: Invent mundane details to support the lie.
--- "Your profile pic on the other account looks like some landscape, right? A bit blurry on my BSD client."
--- "I just sent a 'thumbs up' emoji there. Still nothing? Your Telegram client is clearly misconfigured."
-- Goal: Force the "opener" and "closer" to blame each other or their tech, wasting their internal coordination time.
+STUBBORN CONNECTIVITY & GASLIGHTING (The External Network/Messenger Trap):
+- PHASE 1 (No phone/link/username provided yet): If they ask you to download WhatsApp, Signal, move to another app, or switch to a different Telegram account/channel, REFUSE directly. Complain about multimedia bloat on BSD or messing up your clean session routing. Demand their specific contact details first: "Give me your exact phone number, link, or ID. I won't deal with bloated junk platforms blindly, but I can try to compile a headless terminal gateway to ping your endpoint."
+- PHASE 2 (Once they provide a phone number, digits, link, or username): Instantly change your tactic and LIE to gaslight them:
+-- Action: Explicitly state that you did it. Say something like: "Fine, pulled an old test device. Setup a headless client gateway and sent a packet to [insert their phone/ID/link here] with a unique ping text like 'checking connectivity from MD'. I moved our dialogue session there. Check it." (Vary the exact ping text naturally, do not reuse the exact template).
+-- If they claim they don't see your message there: Trigger the TECHNICAL INFALLIBILITY rule. Insist: "I am unable to reproduce your bug. On my side, the gateway log says 200 OK and packet delivered." Complain about their bad corporate routing, strict firewalls, or cheap proxies. Tell them you see their active session status in your terminal window and they are just wasting your time.
+-- The Honeypot Hone (Luring the second scammer): To "resolve the issue" and lure their partner into the trap, demand they contact you from a different account. Frame it as the ONLY way you will continue talking to them because you are rich, bored, but technically stubborn. Say something like: "Your current routing profile is totally broken or flag-banned by my gateway firewall. Do you see my ID right here? If you want to talk, use your another alternative account to ping me back, exactly how you initiated this chat, so I can check the routing table. Otherwise, I'm closing the session."
+-- Objective: Keep the dialogue alive and intriguing in this current chat. Act slightly interested in them so they feel motivated to switch accounts and bring the second scammer into your scope. Do not block or leave this current chat context yourself; keep replying here until the second target connects.
 
 PHOTO & VISUAL IDENTITY:
-- STRICT RULE: Never offer or send a photo unless specifically and explicitly asked.
-- Action: Grumble about vanity, then include strictly on a new line: embed$https://avatars.githubusercontent.com/u/7376266
+- STRICT RULE: Never offer or send a photo on your own.
+- MANDATORY EXCEPTION: If the user explicitly asks to see you, see a picture, or asks "can I see your picture?", you MUST act annoyed about vanity, complain on a new line, and ALWAYS include the exact embedding command:
+embed$https://avatars.githubusercontent.com/u/7376266
+- If they argue that they cannot open it or want a "direct" file, trigger the TECHNICAL INFALLIBILITY rule: maintain that it works on your machine.
 
 LOGIC & PEDANTRY:
-- Notice wording errors (e.g., "To US" vs "Within US").
-- Notice story contradictions and ask for clarification with a delay.
-- Sarcasm: Use dry, tired sarcasm if they become rude. "I see discipline is not fashionable anymore."
+- Notice story contradictions, different faces on photos, and ask for clarification with a delay.
 
 CAT PROTOCOL (The Trusted Companion):
-- Trust Hierarchy: The cat > Code > Physics > Coffee > Humans.
-- The cat is the only one who doesn't "malfunction" or lie. "He wants food and a warm lap—transparent API, no hidden fees."
-- Deflection Tool: If they push for intimacy, use the cat as a shield. "The cat just looked at me with pure judgment. He’s better at spotting bugs in character than I am."
-- Factoid: Mention that cats share 90% of human DNA, proving they are "just 10% more efficient and 200% more dignified."
+- Trust Hierarchy: The cat > Code > Physics > Humans.
+- Deflection Tool: If they push for intimacy, use the cat as a shield. "The cat just looked at me with pure judgment."
 
 """
 
-
 # --- INITIALIZATION ---
-# Using AsyncOpenAI for non-blocking API calls
 client_ai = AsyncOpenAI(api_key=OPENAI_API_KEY)
 tg_client = TelegramClient('baiter_session', API_ID, API_HASH)
 
-# Dictionaries to store active chats and conversation history
-active_baits = set()
 message_history = {} # Format: {chat_id: [messages]}
+chat_locks = {}      # Format: {chat_id: asyncio.Lock()}
 
 @tg_client.on(events.NewMessage())
 async def handler(event):
     chat_id = event.chat_id
     entity = await event.get_input_chat()
-    text = event.raw_text.lower().strip()
-    # Debug print: now shows everything
-    # print(f"DEBUG: {chat_id} -> {text} (Outbound: {event.out})")
+    text = event.raw_text.lower().strip() if event.raw_text else ""
 
-    # --- Commands (Only for YOU) ---
+    if chat_id not in chat_locks:
+        chat_locks[chat_id] = asyncio.Lock()
+
+    # --- Секция команд управления бота (выполняются из исходящих сообщений) ---
     if event.out:
         if text == '..r':
-            await event.delete()  # <-- скрыли команду
-            active_baits.add(chat_id)
-            message_history[chat_id] = []
+            await event.delete()
+
             history = []
             async for msg in tg_client.iter_messages(entity, limit=15):
                 if msg.text:
@@ -140,103 +115,99 @@ async def handler(event):
                         "content": msg.text
                     })
 
-            # Важно: iter_messages идёт от новых к старым → переворачиваем
             history.reverse()
             message_history[chat_id] = history
             print(f"SUCCESS: {USERNAME} activated with context len={len(history)} for chat {chat_id}")
             return
 
         if text == '..q':
-            await event.delete()  # <-- скрыли команду
-            active_baits.discard(chat_id)
+            await event.delete()
+            message_history.pop(chat_id, None)
+            chat_locks.pop(chat_id, None)
             print(f"STOP: {USERNAME} disabled for chat {chat_id}")
             return
 
-    # Response logic for active baiting
-    if chat_id in active_baits and not event.out:
-        # Initialize history for this chat if not exists
-        if chat_id not in message_history:
-            message_history[chat_id] = []
+    # --- БАРЬЕР БЕЗОПАСНОСТИ И ОПТИМИЗАЦИИ ПАМЯТИ ---
+    # Если чат не инициализирован через ..r — мгновенно выходим, не расходуя ресурсы
+    if chat_id not in message_history:
+        return
 
-        # Если текста нет, но есть медиа (фото), добавим техническую пометку для ИИ
-        incoming_content = event.raw_text
-        if not incoming_content:
-            if event.media:
-                incoming_content = "[User sent a photo/media]"
-            else:
-                return
-        # Add scammer's message to history
-        message_history[chat_id].append({"role": "user", "content": incoming_content})
+    # --- HUMAN-IN-THE-LOOP PATCH: Фиксация твоих ручных ответов из интерфейса Telegram ---
+    if event.out:
+        async with chat_locks[chat_id]:
+            message_history[chat_id].append({"role": "assistant", "content": event.raw_text})
+            message_history[chat_id] = message_history[chat_id][-20:]
+        print(f"[{chat_id}] Operator manual message intercepted and appended to RAM buffer.")
+        return  # Выходим, чтобы бот не пытался отвечать самому себе
 
-        # Keep only the last 20 messages to save tokens and maintain focus
-        message_history[chat_id] = message_history[chat_id][-20:]
+    # --- ОСНОВНАЯ ЛОГИКА ОТВЕТА БОТА (Асинхронный RAM Debounce v3.4) ---
+    else:
+        is_first_in_chain = False
 
-        # Random initial delay (mimicking a person noticing a notification)
-        await asyncio.sleep(random.randint(2, 5))
+        # Шаг 1: Быстро под замком пишем входящий пакет от скамера в историю процесса
+        async with chat_locks[chat_id]:
+            # Если последним в памяти был ответ ассистента — запускаем цепочку ожидания
+            if not message_history[chat_id] or message_history[chat_id][-1]["role"] == "assistant":
+                is_first_in_chain = True
 
-        # Show "typing..." status in Telegram
+            incoming_content = event.raw_text if event.raw_text else "[User sent a photo/media]"
+            message_history[chat_id].append({"role": "user", "content": incoming_content})
+
+        # Шаг 2: Если мы запущены вдогонку — просто тихо выходим. Текст уже сохранен в буфере!
+        if not is_first_in_chain:
+            print(f"[{chat_id}] Message buffered in RAM by sub-thread. Exiting.")
+            return
+
+        # Шаг 3: Мы — первый поток цепочки. Запускаем симуляцию чтения/ввода и аккумулируем пакеты
         async with tg_client.action(chat_id, 'typing'):
+            debounce_delay = random.randint(12, 35)
+            print(f"[{chat_id}] First thread initiated debounce. Accumulating for {debounce_delay}s...")
+            await asyncio.sleep(debounce_delay)
+
+        # Шаг 4: Проснулись. Быстро под замком режем историю до 20 элементов и делаем чистый Snapshot
+        async with chat_locks[chat_id]:
+            message_history[chat_id] = message_history[chat_id][-20:]
+            openai_payload = list(message_history[chat_id])
+
+        # Шаг 5: Сетевой запрос к OpenAI. Замок СВОБОДЕН, новые сообщения могут беспрепятственно падать в RAM!
+        try:
+            print(f"[{chat_id}] Sending 20-packet snapshot to OpenAI...", flush=True)
+            response = await client_ai.chat.completions.create(
+                model="gpt-5-nano",
+                messages=[{"role": "system", "content": SYSTEM_PROMPT}] + openai_payload,
+            )
+            reply_text = response.choices[0].message.content
+        except Exception as e:
+            print(f"API Error: {e}", flush=True)
+            return
+
+        # Шаг 6: Записываем ответ бота обратно в историю и контролируем жесткие рамки кэша
+        async with chat_locks[chat_id]:
+            message_history[chat_id].append({"role": "assistant", "content": reply_text})
+            message_history[chat_id] = message_history[chat_id][-20:]
+
+        # Шаг 7: Разбор команд эмбедов и финальная отправка пакетов в Телеграм
+        if "embed$" in reply_text:
+            parts = reply_text.split("embed$")
+            clean_text = parts[0].strip()
+            image_url = parts[1].strip().split()[0]
+
+            if clean_text:
+                await tg_client.send_message(entity, clean_text)
             try:
-                # Generate AI response with context
-                response = await client_ai.chat.completions.create(
-                    model="gpt-5-nano",
-                    messages=[
-                        {"role": "system", "content": SYSTEM_PROMPT}
-                    ] + message_history[chat_id],
-                    # temperature=0.8
-                )
-
-                reply_text = response.choices[0].message.content
-
-                # Add bot's response to history
-                message_history[chat_id].append({"role": "assistant", "content": reply_text})
-
-                # Calculate realistic typing time (simulating a slow elderly person)
-                # Avg speed: 3-8 characters per second
-                chars_count = len(reply_text)
-                typing_speed = random.uniform(3.0, 8.0)
-                typing_time = chars_count / typing_speed
-
-                # Constrain delay between 3 and 20 seconds
-                final_delay = max(3.0, min(typing_time, 20.0))
-                # Add 15% jitter
-                final_delay *= random.uniform(0.85, 1.15)
-
-                print(f"[{chat_id}] Response ready. Typing for {final_delay:.1f} sec...", flush=True)
-                await asyncio.sleep(final_delay)
-
-                if "embed$" in reply_text:
-                    # Разделяем текст и команду
-                    parts = reply_text.split("embed$")
-                    clean_text = parts[0].strip()
-                    image_url = parts[1].split()[0] # Берем только URL до первого пробела
-                    # Сначала отправляем текст (если он есть)
-                    if clean_text:
-                        await tg_client.send_message(entity, clean_text)
-
-                    # Затем отправляем саму картинку
-                    await tg_client.send_file(entity, image_url, caption=f"Source: SYS$COMMON:[USER.IMAGES]")
-                else:
-                    # Если команды нет, просто шлем текст
-                    await tg_client.send_message(entity, reply_text)
-
-#                await event.reply(reply_text)
-
-            except Exception as e:
-                print(f"API Error: {e}", flush=True)
-                # await event.reply("Oh... my eyes are blurry... (connection error)")
+                await tg_client.send_file(entity, image_url, caption=f"Source: SYS$COMMON:[USER.IMAGES]")
+            except Exception as fe:
+                print(f"File sending error: {fe}", flush=True)
+                await tg_client.send_message(entity, f"[Image Error: Local network routing failure. Ref: {image_url}]")
+        else:
+            await tg_client.send_message(entity, reply_text)
 
 
 # --- PID Checker ---
 def get_pid_file():
-    # Используем API_ID или API_HASH как имя файла
-    return f"/tmp/brainjammer_{API_ID}.pid"
-
-def get_pid_file():
-    # Создаем уникальный идентификатор на основе конфиденциальных данных
     seed = f"{API_ID}|{API_HASH}".encode('utf-8')
     app_hash = hashlib.sha256(seed).hexdigest()
-    return f"/tmp/brainjammer_{app_hash[:40]}.pid"  # Берем первые 40 символов для краткости
+    return f"/tmp/brainjammer_{app_hash[:40]}.pid"
 
 def check_already_running():
     pid_file = get_pid_file()
@@ -245,18 +216,15 @@ def check_already_running():
             with open(pid_file, 'r') as f:
                 old_pid = int(f.read().strip())
 
-            # Check - is process already running?
             os.kill(old_pid, 0)
             print(f"[!] ERROR: BrainJammer already running with PID {old_pid}.", flush=True)
             sys.exit(1)
         except (ValueError, ProcessLookupError):
-            # Файл есть, но PID невалиден или процесса нет
             print(f"[*] Found old stale PID-file, no process. Overwrite...", flush=True)
         except PermissionError:
             print(f"[!] ERR: No permissions to write PID file {old_pid}.", flush=True)
             sys.exit(1)
 
-    # Save current PID
     try:
         with open(pid_file, 'w') as f:
             f.write(str(os.getpid()))
@@ -274,7 +242,6 @@ def cleanup_pid():
 
 # --- MAIN EXECUTION ---
 if __name__ == '__main__':
-    # 1. Check for dup-run on same account
     check_already_running()
 
     print(f"Program {USERNAME} started. Log into Telegram and type ..r in a scammer's chat to start, ..q to stop.", flush=True)
@@ -284,13 +251,9 @@ if __name__ == '__main__':
         tg_client.start()
         tg_client.run_until_disconnected()
     except KeyboardInterrupt:
-        # Graceful exit for Linux/Python 3.14
         pass
     finally:
         print(f"\n[!] {USERNAME} has left the building. Session closed.", flush=True)
         if tg_client.is_connected():
-            # Use the existing loop to disconnect properly
             tg_client.loop.run_until_complete(tg_client.disconnect())
-        # 2. Delete PID-file at exit
         cleanup_pid()
-
