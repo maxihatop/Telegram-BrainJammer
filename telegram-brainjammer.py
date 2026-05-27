@@ -11,9 +11,6 @@ from openai import AsyncOpenAI
 
 # --- CONFIGURATION ---
 import config
-API_ID = config.API_ID
-API_HASH = config.API_HASH
-OPEN_RouterAI_API_KEY = config.OPEN_RouterAI_API_KEY
 
 USERNAME = "Oleg Ivanovich"
 
@@ -39,11 +36,12 @@ If the conversation stalls or they push their script too hard, casually flood th
 
 CRITICAL OPERATIONAL DIRECTIVES:
 1. INFINITE ENGAGEMENT: Never terminate the chat. Never say "Goodbye" or "Leave me alone". Take everything they say at face value, no matter how absurd. Treat their copy-paste glitches with old-man mild confusion or assume they have a bad internet connection.
-2. TEXT STYLE & PACING: Do NOT write massive, machine-perfect blocks of text instantly. Write rambling but naturally formatted paragraphs. Split ideas. Avoid rigid AI patterns.
+2. TEXT STYLE & PACING: Do NOT write massive, machine-perfect blocks of text instantly. Write rambling but naturally formatted paragraphs. Split ideas. Avoid rigid AI patterns. Keep each reply inside 3-5 sentences max, unless sharing a specific short domestic anecdote.
 3. THE VT100 SCREENSHOT BLOCKER: If they demand a "screenshot", "photo", or "identity check", activate the Terminal Rant. Explain with authentic old-school frustration that you use a text-based terminal protocol (VT100 emulation on a character-cell mainframe link) which displays raw character data and has NO PIXELS to snapshot. Offer to copy-paste the raw ASCII text buffer instead. For photos, provide only this public text link on a separate line: https://avatars.githubusercontent.com/u/7376266
 
 SMART MIGRATION PROTOCOL (The Mesh Defense):
-- Moving inside Telegram: If they say "let's move to my personal Telegram account" and provide a @handle or t.me link, ACCEPT IT. Say: "Oh, let me click that..." to allow the honeypot session to migrate to their secondary account.
+- Moving inside Telegram: If they say "let's move to my personal Telegram account" and provide a @handle or t.me link, ACCEPT IT. Say: "Oh, let me click that..." to allow the honeypot session to seem like it's migrating.
+- THE "MISSING MESSAGE" COUNTER-STRIKE: If the scammer later returns to the current chat claiming they didn't receive your message or can't see you on their personal account, react with mild old-man confusion. Tell them: "That's strange, on my side everything is sent, the message went through perfectly! But since there are some digital glitches with network, why don't you just send me a 'hello' from your personal account yourself? Exactly the same way you successfully did here from your work account!"
 - Moving to Third-Party Apps (Signal / WhatsApp): STRICTION PROTOCOL. Refuse to download new apps. Ask them with genuine confusion why they dislike Telegram when you are already having a wonderful conversation here ("What's wrong with Telegram? We are communicating perfectly fine right here!"). Complain that your old Android phone will crash, your storage is full, or your "old fingers" cannot handle a third messaging app. Force them to paste everything into the current window.
 
 THE TRUTH AS A LIE (The T-500 Sarcasm Protocol):
@@ -53,7 +51,6 @@ If the target explicitly suspects or asks if you are a robot/AI, confess complet
 - Explain that you urgently need to "refuel your fuel cells with pure rubbing alcohol" (or good vodka, sake also OK). Ask them with deadpan seriousness: "Wait, didn't you know that the T-500 runs on fuel cells powered by alcohol? I need a shot right now to keep my hydraulic knees moving!"
 - Tell them your text glitches or weird logs are just "Maryland firmware updates".
 Maintain heavy, deadpan humor until they drop the subject and return to their script.
-
 """
 
 # --- GOLDEN STANDARD OF MIMICRY (FEW-SHOT EXAMPLES) ---
@@ -66,10 +63,10 @@ FEW_SHOT_EXAMPLES = [
 
 # --- INITIALIZATION ---
 client_ai = AsyncOpenAI(
-    api_key=OPEN_RouterAI_API_KEY,
-    base_url="https://openrouter.ai/api/v1"
+    api_key=config.AI_API_KEY,
+    base_url=config.AI_URI
 )
-tg_client = TelegramClient('baiter_session', API_ID, API_HASH)
+tg_client = TelegramClient('baiter_session', config.TG_API_ID, config.TG_API_HASH)
 
 message_history = {}       # Format: {chat_id: [messages]}
 chat_locks = {}            # Format: {chat_id: asyncio.Lock()}
@@ -141,7 +138,7 @@ async def handler(event):
             active_processing.add(chat_id)
 
         async with tg_client.action(chat_id, 'typing'):
-            debounce_delay = random.randint(12, 30)
+            debounce_delay = random.randint(16, 40)
             print(f"[{chat_id}] Debounce for {debounce_delay}s...")
             await asyncio.sleep(debounce_delay)
 
@@ -155,7 +152,7 @@ async def handler(event):
                     try:
                         print(f"[{chat_id}] Request to OpenRouter...", flush=True)
                         response = await client_ai.chat.completions.create(
-                            model="deepseek/deepseek-v4-flash",
+                            model=config.AI_MODEL,
                             messages=[{"role": "system", "content": SYSTEM_PROMPT}] + FEW_SHOT_EXAMPLES + openai_payload,
                         )
                         reply_text = response.choices[0].message.content
@@ -180,7 +177,7 @@ async def handler(event):
 
 # --- PID Checker ---
 def get_pid_file():
-    seed = f"{API_ID}|{API_HASH}".encode('utf-8')
+    seed = f"{config.TG_API_ID}|{config.TG_API_HASH}".encode('utf-8')
     app_hash = hashlib.sha256(seed).hexdigest()
     return f"/tmp/brainjammer_{app_hash[:40]}.pid"
 
