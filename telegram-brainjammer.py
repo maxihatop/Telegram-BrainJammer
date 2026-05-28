@@ -137,6 +137,9 @@ message_history = {}
 chat_locks = {}
 active_processing = set()
 
+# Глобальный счетчик для Round-Robin балансировки
+model_round_robin_index = 0
+
 def extract_clean_text(ai_response):
     """Очищает ответ, если модель выплюнула сырой JSON вместо строки,
     и подменяет пустые ответы (None) на дедовский fallback."""
@@ -182,9 +185,6 @@ async def handler(event):
             first_name = getattr(chat_peer, 'first_name', '[~~]') or '[~]'
             last_name = getattr(chat_peer, 'last_name', '[~~]') or '[~]'
             display_name = f"@{chat_peer.username} <{first_name} {last_name}>".strip()
-
-    # Строка для красивого вывода в print()
-    chat_log_id = f"[{chat_id}:{display_name}]"
 
     # Строка для красивого вывода в print()
     chat_log_id = f"[{chat_id}:{display_name}]"
@@ -253,6 +253,9 @@ async def handler(event):
 
         try:
             while True:
+                global model_round_robin_index
+                model_round_robin_index += 1
+                current_model = config.AI_MODELS_POOL[model_round_robin_index % len(config.AI_MODELS_POOL)]
                 message_sent = False
                 # PATCH 2: Полная изоляция блока генерации и отправки от падений контекстного менеджера
                 try:
@@ -262,17 +265,20 @@ async def handler(event):
                             openai_payload = list(message_history[chat_id])
 
                         try:
-                            print(f"[{chat_log_id}] Request to API...", flush=True)
+                            print(f"[{chat_log_id}] Request #{model_round_robin_index} to API {current_model}...", flush=True)
                             response = await client_ai.chat.completions.create(
-                                model=config.AI_MODEL,
+                                model=current_model,
                                 messages=[{"role": "system", "content": SYSTEM_PROMPT}] + FEW_SHOT_EXAMPLES + openai_payload,
                             )
                             raw_reply = response.choices[0].message.content
                             clean_reply = extract_clean_text(raw_reply)
 
                         except Exception as e:
-                            print(f"[{chat_log_id}] API Error: {e}", flush=True)
-                            clean_reply = "I see some netwok issue, the connection is acting up today. What were you saying?"
+                            print(f"[{chat_log_id}] API Error with {current_model}: {e}. Retrying with next model...", flush=True)
+                            # Спим 10 секунд, чтобы не спамить провайдера в случае глобального сбоя
+                            await asyncio.sleep(10)
+                            # Уходим на следующую итерацию while True (индекс модели инкрементируется в начале цикла)
+                            continue
 
                         media_file = None
                         embed_match = re.search(r'\[embed\$([^\]]+)\]', clean_reply)
