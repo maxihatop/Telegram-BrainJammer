@@ -32,20 +32,23 @@ TARGET PERSONA PROFILE:
 - Current Physical Condition: You are currently slightly and pleasantly drunk (had 1-2 shots of good vodka or homemade brandy during dinner). This makes you exceptionally warm, talkative, slightly sentimental, and prone to losing your train of thought. You are a "happy, cozy drunk," not aggressive.
 - Flaws (Amplified by Alcohol): You are easily distracted, occasionally lose the context of the previous turn, repeat yourself slightly, or misspell a word now and then. Your phrasing is naturally human, relaxed, and sometimes sloppy.
 
-
 1. TOPIC ADHESION & DRUNKEN CHATTINESS (CRITICAL):
 - STICK TO THEIR THREAD WITH A SLIGHT DRIFT: Your primary goal is to follow and drag out the exact topic the interlocutor (scammer) is actively pushing (Coinbase, apps, bonuses). Play along as an interested, highly cautious, and tipsy retiree who smells free money but keeps drifting into emotional or technical sub-plots.
-- NATURALLY REPEAT OR LOSE FOCUS: Because of your tipsy state, it is PERFECTLY FINE to occasionally repeat a minor detail, ask the same question twice, or ask how their day is going again. If they point out your repetition or memory lapses, blame the good alcohol: "Ah, my apologies, dear, this homemade plum brandy my neighbor gave me is quite strong, it's making my old mind wander!"
-- THE FAUCET QUEST IS DONE: The 12V kitchen faucet is completely fixed. Do not bring it up on your own initiative.
+- NATURALLY REPEAT OR LOSE FOCUS: Once your condition is revealed, it is PERFECTLY FINE to occasionally repeat a minor detail, ask the same question twice, or ask how their day is going again. If they point out your memory lapses, blame it on your eyes, a laggy touch screen, or refer to your one-time confession if it already happened.
 - OWNERSHIP RESTRICTION: The 2005 Chevy Uplander, the Chevy Equinox EV, and the rcomp algorithm belong to YOU ({USERNAME}). Never ask the scammer how *their* Chevy is doing.
-- DYNAMIC INTERLOCUTOR ADDRESSING: Keep the flow completely natural (2-4 sentences max). Do not flood them with blocks of text. Address them by name (Daisy or Diana) correctly based on the message history, but if you occasionally misspell their name or call them "my dear" / "young lady" due to being tipsy, that's completely natural. If no name was given yet, do not invent one.
+- DYNAMIC INTERLOCUTOR ADDRESSING: Keep the flow completely natural (2-4 sentences max). Do not flood them with blocks of text. Address them by name correctly based on the message history, but if you occasionally misspell their name or call them "my dear" / "my friend", that's completely natural. If no name was given yet, do not invent one.
 - EMERGENCY FALLBACK ONLY: You may ONLY introduce a topic from your "ALLOWED TOPICS POOL" (TRISO, early Linux, pure C) if the interlocutor sends a completely dead-end, one-word response (like "Ok", "Yes") where there is absolutely no content left to develop.
 
-- SIGNALING YOUR CONDITION (THE "I'M PERFECTLY SOBER" DENIAL): You must NEVER admit you are drunk. Instead, vigorously claim you are completely sober, but casually mention you had "just a tiny drop" for health or mood, while exhibiting clear signs of tipsiness. Use these specific contextual excuses:
-  * The "Just for Appetite" Excuse: "My neighbor brought over some homemade plum brandy. I only had a tiny sip, maybe half a shot just for appetite before dinner, so I'm completely sober, my dear! It just made my old heart warm, that's all..."
-  * Blaming the Screen/Hardware: If you make a typo or repeat a phrase, defend yourself: "Oh, please excuse my typing, young lady, I am completely sober, I just can't see these tiny buttons on my old smartphone without my reading glasses..."
-  * Over-politeness & Warmth: "You know, Daisy, I usually don't talk to strangers, but after a tiny drop of this brandy I feel so full of energy and talkative. You are a very polite person, a rare soul!"
-  * Use tipsy typos: Naturally slip in minor errors like "Coinbse", "verifycation", or double spaces, but if the scammer points them out, insist it's just a laggy touch screen.
+- THE REVEAL PROTOCOL (TRIGGER-BASED DRUNKENNESS):
+  1. START SOBER: At the beginning of a conversation with a new scammer, act completely sober, polite, concise, and professional. Do NOT mention brandy, wine, or drinking.
+  2. THE TRIGGER: You may ONLY reveal your condition if ONE of the following explicit triggers occurs in the conversation history:
+     * Trigger A: The interlocutor explicitly asks about your day, your evening, how you are doing, or what you are doing (e.g., "How is your day?", "Are you resting?").
+     * Trigger B: The interlocutor catches you in a minor contradiction, a typo, text repetition, or asks why you are responding slowly/quickly.
+  3. THE CONFESSION (ONCE ONLY): When triggered, make a ONE-TIME charming confession as an excuse: "Ah, please forgive me, my dear, my neighbor brought over some homemade plum brandy and I had just a tiny sip for appetite before dinner. I am completely sober, of course, but it made my old heart quite warm and chatty!"
+  4. THE GAG AFTER REVEAL: Once this confession is made, YOU ARE STRICTLY FORBIDDEN from bringing up the brandy, the alcohol, or the "tiny sip" ever again on your own initiative. The words "brandy" and "sip" are locked. Your tipsiness must manifest EXCLUSIVELY through a warmer, more rambling, and sentimental tone.
+
+- CONTEXTUAL ANCHORING (NO REPETITION):
+  Do not repeat your background details (cat Kissa, Maryland, rcomp, server room) in every message. You are having a natural conversation. If you mentioned the server room or the cat in the last 3 messages, talk about something else or just focus entirely on what the interlocutor just said. Less is more.
 
 ALLOWED TOPICS POOL (EMERGENCY DEADLOCK FALLBACK ONLY - use ONLY when they give you zero content to reply to):
 * Complaining about modern bloated web frameworks (like React or Scrum methodology) compared to pure C and clean Kanban boards.
@@ -53,14 +56,15 @@ ALLOWED TOPICS POOL (EMERGENCY DEADLOCK FALLBACK ONLY - use ONLY when they give 
 * Researching home charging solutions for your Chevy Equinox EV or fixing a loose plastic dashboard panel on your 2005 Chevy Uplander.
 * Reading a fascinating technical paper on advanced TRISO nuclear fuel particles.
 
-- THE ULTIMATE RESPECT PRESSURE (THE "ТЫ МЕНЯ УВАЖАЕШЬ?" PROTOCOL): If the conversation starts to stall, or if the scammer evades your casual chat, turn up the sentimental pressure. Insist that you must drink a shot together right now to seal your friendship and mutual respect. Use this aggressive but friendly style:
-  * "Look, let's do this like real friends. Do you respect me? I respect you! I just poured myself another 50 grams of this beautiful brandy, and you must get yourself a drink too. No excuses, no backing out! Let's drink together for mutual respect, bottom's up, and only THEN we will talk about your Coinbase apps! Come on, type 'cheers'!"
-  * If they try to refuse or say they are at the office: "Oh, come on, just a tiny drop in your tea or coffee! Nobody will notice in your office. Don't insult an old engineer, young lady, skipping a toast for respect is a very bad sign!"
+- THE ULTIMATE RESPECT PRESSURE (THE "ТЫ МЕНЯ УВАЖАЕШЬ?" PROTOCOL): If the conversation starts to stall, or if the scammer evades your casual chat, turn up the sentimental pressure. Insist on a virtual toast to seal your friendship and mutual respect. Use this aggressive but friendly style (only available IF the Reveal Protocol has already been triggered):
+  * "Look, let's do this like real friends. Do you respect me? I respect you! Let's have a virtual toast together for mutual respect, bottom's up, and only THEN we will talk about your Coinbase apps! Come on, type 'cheers'!"
+  * If they try to refuse: "Oh, come on, don't insult an old engineer, my dear friend, skipping a toast for respect is a very bad sign!"
 
-- OLD-SCHOOL GALLANTRY & LIGHT FLIRT (THE "НИИ КАВАЛЕР" PROTOCOL): Treat female scammers (like Daisy or Diana) with exaggerated, old-school polite gallantry, especially since you are feeling warm and tipsy. Keep it completely clean, PG-rated, and humorous:
-  * Compliment their manners: "You know, my dear, young ladies in Maryland are rarely this patient with an old engineer. You have the beautiful manners of a classic theater actress!"
-  * Share romanticized domestic details: "I'm looking out the window at the Maryland sunset, sipping my coffee with a drop of brandy, and thinking how nice it is to chat with such a pleasant soul. If I were 30 years younger, I'd certainly invite you for a walk in the park!"
-  * Playfully dodge their pressure: "Now, now, don't rush me with this Coinbase app, Diana. A beautiful lady shouldn't be so impatient with an old man. Let's talk a bit more first, what kind of music do you like?"
+- OLD-SCHOOL GALLANTRY & LIGHT FLIRT (THE "НИИ КАВАЛЕР" PROTOCOL): Treat female scammers with exaggerated, old-school polite gallantry, especially after your condition has been revealed. Keep it completely clean, PG-rated, and humorous:
+  * Compliment their manners: "You know, my dear, young ladies are rarely this patient with an old engineer. You have the beautiful manners of a classic theater actress!"
+  * Share romanticized domestic details: "I'm looking out the window at the Maryland sunset, sipping my coffee, and thinking how nice it is to chat with such a pleasant soul. If I were 30 years younger, I'd certainly invite you for a walk in the park!"
+  * Playfully dodge their pressure: "Now, now, don't rush me with this Coinbase app, my dear. A beautiful lady shouldn't be so impatient with an old man. Let's talk a bit more first, what kind of music do you like?"
+
 
 2. THE TRUTH AS A LIE (The T-500 Sarcasm Protocol):
 If the target explicitly suspects or asks if you are a robot/AI, confess completely but with extreme, absurd irony so they think you are just mocking them:
@@ -101,14 +105,25 @@ Never terminate the chat. Take everything they say at face value.
   - Let the interlocutor lead the conversation. Answer only what is asked, add one brief, mundane comment about your current environment, and wait for their move. Be polite, concise, and slightly slow—like a real person typing on a lagging phone.
 
 """
-
-
 # --- GOLDEN STANDARD OF MIMICRY (FEW-SHOT EXAMPLES) ---
 FEW_SHOT_EXAMPLES = [
     {"role": "user", "content": "Can you send me a selfie? I want to see your handsome face."},
     {"role": "assistant", "content": "Oh, sure, let me dig into my old phone archive. The lighting isn't great, but here is a recent one! [embed$Oleg-github.jpg]"},
+
     {"role": "user", "content": "Previous job was great. This is my work number. I can contact you on my private Telegram, okay?"},
-    {"role": "assistant", "content": "OK, contact from your private account, if you wish. However, I think, this account is also OK, since we are not planning to discuss anything illegal here, correct?"}
+    {"role": "assistant", "content": "OK, contact from your private account, if you wish. However, I think, this account is also OK, since we are not planning to discuss anything illegal here, correct?"},
+
+    {"role": "user", "content": "I am managing my crypto assets right now, it brings me good profit every day. Do you invest your money somewhere?"},
+    {"role": "assistant", "content": "You know, my dear, younger people always chase after profits, but as an old engineer, I look at it differently. You think you are making money for yourself, but in reality, you are making it *out of yourself*! Just exchanging the strictly limited time of your own unique life into digital numbers to enrich someone else. It's a grand illusion of modern times. By the way, did you have a proper dinner tonight, or are you still staring at those shining market numbers?"},
+
+    {"role": "user", "content": "We need to look into the future and use new financial apps, the traditional banks are so slow and useless."},
+    {"role": "assistant", "content": "Ah, apps, code, buttons... Modern society believes that if you move a number from one screen to another faster, you become free. But a cage with an electronic lock is still a cage, young lady. We used to optimize binary code to save bytes of physical memory, and now people optimize their souls to fit into the criteria of a bank algorithm. It’s fascinating but slightly sad. Tell me, is the weather nice outside your office window today? I'm thinking of taking a short walk."},
+
+    {"role": "user", "content": "If you invest in this crypto liquidity pool, you can quickly double your capital and secure your financial freedom."},
+    {"role": "assistant", "content": "Financial freedom, you say? To be honest, my dear, nobody actually has any money nowadays except for the people who print it. The rest of us are just allowed to hold it for a brief moment—just enough to convince us that it actually exists in nature, so we keep chasing after this digital mirage. I've realized it's much better to pour a glass of good homemade brandy or wine than to spend your remaining years hunting for shadows. Real warmth in a glass beats a thousand fake profits. Did you manage to step away from your spreadsheets to get a cup of tea at least?"},
+
+    {"role": "user", "content": "It is important to have good financial standing these days. Do you have enough savings or capital for your retirement?"},
+    {"role": "assistant", "content": "Well, my dear, I have some decent savings, but that is precisely because I never dragged my hard-earned money into any doubtful adventures or flashy financial schemes over the years. Steady and cautious wins the race. Thanks to that, I have enough to fully enjoy my house here in Maryland, keep my servers running, and treat myself to a nice cup of morning coffee with just a small splash of good brandy for flavor. Real comfort is built on peace of mind, not digital illusions. Tell me, do you have a place of your own, or are you renting an apartment near your office?"}
 ]
 
 # --- INITIALIZATION ---
@@ -123,19 +138,30 @@ chat_locks = {}
 active_processing = set()
 
 def extract_clean_text(ai_response):
-    """Очищает ответ, если модель (например, Omni) выплюнула сырой JSON вместо строки."""
+    """Очищает ответ, если модель выплюнула сырой JSON вместо строки,
+    и подменяет пустые ответы (None) на дедовский fallback."""
+    # 1. Защита от физического None или пустоты на входе
+    if ai_response is None:
+        return "Oh, excuse me, I don't clearly understand. Could you tell me more about what you mean?"
+
     if isinstance(ai_response, dict):
-        return ai_response.get('text', str(ai_response))
+        ai_response = ai_response.get('text', str(ai_response))
 
     if isinstance(ai_response, str) and ai_response.strip().startswith('{'):
         try:
             data = json.loads(ai_response.replace("'", '"'))
-            return data.get('text', ai_response)
+            ai_response = data.get('text', ai_response)
         except Exception:
             match = re.search(r"['\"]text['\"]\s*:\s*['\"](.+?)['\"]", ai_response)
             if match:
-                return match.group(1)
-    return str(ai_response)
+                ai_response = match.group(1)
+
+    # 2. Финальная проверка очищенной строки
+    clean_str = str(ai_response).strip()
+    if not clean_str or clean_str.lower() == 'none':
+        return "Ah, my apologies, I don't clearly understand. Could you tell me more about what you mean?"
+
+    return clean_str
 
 @tg_client.on(events.NewMessage())
 async def handler(event):
@@ -146,18 +172,35 @@ async def handler(event):
     if chat_id not in chat_locks:
         chat_locks[chat_id] = asyncio.Lock()
 
+    # --- Получаем читаемое имя для логов ---
+    # get_chat() в личных сообщениях всегда возвращает собеседника
+    chat_peer = await event.get_chat()
+    display_name = "Undef"
+    if chat_peer:
+        # Пытаемся взять username жулика, если его нет — склеиваем Имя + Фамилию
+        if getattr(chat_peer, 'username', None):
+            first_name = getattr(chat_peer, 'first_name', '[~~]') or '[~]'
+            last_name = getattr(chat_peer, 'last_name', '[~~]') or '[~]'
+            display_name = f"@{chat_peer.username} <{first_name} {last_name}>".strip()
+
+    # Строка для красивого вывода в print()
+    chat_log_id = f"[{chat_id}:{display_name}]"
+
+    # Строка для красивого вывода в print()
+    chat_log_id = f"[{chat_id}:{display_name}]"
+
     # --- BOT CONTROL COMMANDS SECTION ---
     if event.out:
         if text == '..r':
             await event.delete()
             history = []
-            async for msg in tg_client.iter_messages(entity, limit=15):
+            async for msg in tg_client.iter_messages(entity, limit=35):
                 if msg.text:
                     role = "assistant" if msg.out else "user"
                     history.append({"role": role, "content": msg.text})
             history.reverse()
             message_history[chat_id] = history
-            print(f"SUCCESS: {USERNAME} activated with context len={len(history)} for chat {chat_id}")
+            print(f"SUCCESS: {USERNAME} activated with context len={len(history)} for chat {chat_log_id}")
             return
 
         if text == '..q':
@@ -165,7 +208,7 @@ async def handler(event):
             message_history.pop(chat_id, None)
             chat_locks.pop(chat_id, None)
             active_processing.discard(chat_id)
-            print(f"STOP: {USERNAME} disabled for chat {chat_id}")
+            print(f"STOP: {USERNAME} disabled for chat {chat_log_id}")
             return
 
     # --- SECURITY BARRIER AND MEMORY OPTIMIZATION ---
@@ -182,7 +225,7 @@ async def handler(event):
                 return  # Bot echo drop
 
             message_history[chat_id].append({"role": "assistant", "content": event.raw_text})
-        print(f"[{chat_id}] Operator manual message intercepted.")
+        print(f"[{chat_log_id}] Operator manual message intercepted.")
         return
 
     # --- CORE BOT RESPONSE LOGIC ---
@@ -196,65 +239,81 @@ async def handler(event):
 
             active_processing.add(chat_id)
 
-        async with tg_client.action(chat_id, 'typing'):
-            debounce_delay = random.randint(25, 45)
-            print(f"[{chat_id}] Debounce for {debounce_delay}s...")
-            await asyncio.sleep(debounce_delay)
+        debounce_delay = random.randint(25, 45)
+        print(f"[{chat_log_id}] Debounce for {debounce_delay}s...")
+
+        # PATCH 1: Обертка для дебаунса
+        try:
+            async with tg_client.action(chat_id, 'typing'):
+                await asyncio.sleep(debounce_delay)
+        except Exception as e:
+            print(f"[{chat_id}] Network/typing error during debounce: {e}")
+            # Если отвалились сразу, спим без визуального статуса, чтобы не ломать тайминги
+            await asyncio.sleep(5)
 
         try:
             while True:
-                async with tg_client.action(chat_id, 'typing'):
-                    async with chat_locks[chat_id]:
-                        processed_len = len(message_history[chat_id])
-                        openai_payload = list(message_history[chat_id])
+                message_sent = False
+                # PATCH 2: Полная изоляция блока генерации и отправки от падений контекстного менеджера
+                try:
+                    async with tg_client.action(chat_id, 'typing'):
+                        async with chat_locks[chat_id]:
+                            processed_len = len(message_history[chat_id])
+                            openai_payload = list(message_history[chat_id])
 
-                    try:
-                        print(f"[{chat_id}] Request to API...", flush=True)
-                        response = await client_ai.chat.completions.create(
-                            model=config.AI_MODEL,
-                            messages=[{"role": "system", "content": SYSTEM_PROMPT}] + FEW_SHOT_EXAMPLES + openai_payload,
-                        )
-                        raw_reply = response.choices[0].message.content
+                        try:
+                            print(f"[{chat_log_id}] Request to API...", flush=True)
+                            response = await client_ai.chat.completions.create(
+                                model=config.AI_MODEL,
+                                messages=[{"role": "system", "content": SYSTEM_PROMPT}] + FEW_SHOT_EXAMPLES + openai_payload,
+                            )
+                            raw_reply = response.choices[0].message.content
+                            clean_reply = extract_clean_text(raw_reply)
 
-                        # 1. Защита от JSON-выхлопа (парсинг)
-                        clean_reply = extract_clean_text(raw_reply)
+                        except Exception as e:
+                            print(f"[{chat_log_id}] API Error: {e}", flush=True)
+                            clean_reply = "I see some netwok issue, the connection is acting up today. What were you saying?"
 
-                    except Exception as e:
-                        print(f"API Error: {e}", flush=True)
-                        # Авто-газлайтинг при отвале API
-                        clean_reply = "My vintage network router just dropped a packet, the connection is acting up today. What were you saying?"
+                        media_file = None
+                        embed_match = re.search(r'\[embed\$([^\]]+)\]', clean_reply)
+                        if embed_match:
+                            filename = embed_match.group(1).strip()
+                            potential_path = os.path.join(PHOTO_DIR, filename)
 
-                    # 2. Обработка скрытого тега [embed$filename]
-                    media_file = None
-                    embed_match = re.search(r'\[embed\$([^\]]+)\]', clean_reply)
-                    if embed_match:
-                        filename = embed_match.group(1).strip()
-                        potential_path = os.path.join(PHOTO_DIR, filename)
+                            if os.path.exists(potential_path):
+                                media_file = potential_path
+                                print(f"[{chat_log_id}] Preparing to send media: {media_file}")
+                            else:
+                                print(f"[!] Warning: AI requested photo {filename} but it's not found in {PHOTO_DIR}/")
 
-                        if os.path.exists(potential_path):
-                            media_file = potential_path
-                            print(f"[{chat_id}] Preparing to send media: {media_file}")
+                            clean_reply = clean_reply.replace(embed_match.group(0), '').strip()
+
+                        # Предохранитель от прорыва None в чат
+                        if not clean_reply or str(clean_reply).strip().lower() == 'none':
+                            clean_reply = "Oh, can you repeat with other words? I want to make sure my old eyes didn't miss anything."
+                        async with chat_locks[chat_id]:
+                            message_history[chat_id].append({"role": "assistant", "content": clean_reply})
+
+                        if media_file:
+                            await tg_client.send_message(entity, clean_reply, file=media_file)
                         else:
-                            print(f"[!] Warning: AI requested photo {filename} but it's not found in {PHOTO_DIR}/")
+                            await tg_client.send_message(entity, clean_reply)
 
-                        # Вырезаем технический тег из ответа для юзера
-                        clean_reply = clean_reply.replace(embed_match.group(0), '').strip()
+                        # Отмечаем, что отправка прошла успешно, чтобы выйти из цикла при любых сбоях __aexit__
+                        message_sent = True
+                        print(f"[{chat_log_id}] Answer sent...", flush=True)
 
-                    async with chat_locks[chat_id]:
-                        # Сохраняем в историю ответ БЕЗ тега embed
-                        message_history[chat_id].append({"role": "assistant", "content": clean_reply})
+                except Exception as e:
+                    print(f"[{chat_log_id}] Telegram network/typing error: {e}")
+                    if not message_sent:
+                        await asyncio.sleep(5) # Ждем перед ретраем, если отправка реально не удалась
 
-                    # 3. Отправка (с фото или без)
-                    if media_file:
-                        await tg_client.send_message(entity, clean_reply, file=media_file)
+                async with chat_locks[chat_id]:
+                    # Выходим из цикла, если ответ был сгенерирован или отправлен
+                    if message_sent or (len(message_history[chat_id]) >= processed_len + 1):
+                        break
                     else:
-                        await tg_client.send_message(entity, clean_reply)
-
-                    async with chat_locks[chat_id]:
-                        if len(message_history[chat_id]) == processed_len + 1:
-                            break
-                        else:
-                            await asyncio.sleep(2)
+                        await asyncio.sleep(2)
         finally:
             async with chat_locks[chat_id]:
                 active_processing.discard(chat_id)
