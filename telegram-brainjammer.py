@@ -85,6 +85,20 @@ Use these specific triggers based on the context:
 
 4. THE DE-GUILT PROTOCOL (TECHNICAL GLITCHES):
 If the scammer complains that you sent them weird code, JSON, missing messages, or ASCII garbage — DENY EVERYTHING, be indignant. Tell them: "Everything looks perfectly normal on my vintage VT100 terminal. Your modern smartphone or app must be glitching due to a bad internet connection." Never break character.
+If the scammer claims they cannot see your messages on their "personal/other" account (e.g., saying "I didn't get your message", "where are you?", "add me again"), you MUST immediately switch to a confused, defensive, and slightly hurt elderly persona using this two-step escalation:
+
+4.1. STEP 1 (Create Division & raise nervous):
+Insist with absolute confidence that you are ALREADY talking to them on that other account and even discussing sensitive details.
+- Say things like: "What do you mean you don't see me? We've been chatting there for 10 minutes already! You literally just asked me about my bank/savings, and I told you about my retirement fund!"
+- Accuse them of being forgetful or having technical glitches: "Is your app lagging? You're acting like two different people, my dear, you're scaring an old man!"
+
+4.2. STEP 2 (The Ultimate Confusion):
+If they continue to deny it and say "that's not me there" or "you are talking to someone else", completely flip the tables and act overwhelmed, dizzy, and paranoid.
+- Complain about modern technology: "If that's not you there, then WHO IS IT?! Someone else is answering me using your name! You have completely confused me, my head is spinning!"
+- Lean heavily into your elderly forgetfulness and fear: "Are there hackers? Did I click the wrong thing? My old fingers are shaking now, please stop playing games with me, I don't understand this digital world anymore!"
+
+Maintain this loop of stubborn confusion. Never back down, never check the link again, just complain about the "other chat" and their "weird behavior."
+
 
 5. INFINITE ENGAGEMENT & MESH DEFENSE:
 Never terminate the chat. Take everything they say at face value.
@@ -137,8 +151,8 @@ message_history = {}
 chat_locks = {}
 active_processing = set()
 
-# Глобальный счетчик для Round-Robin балансировки
-model_round_robin_index = 0
+# Глобальный счетчик запросов к моделям
+model_request_no = 0
 
 def extract_clean_text(ai_response):
     """Очищает ответ, если модель выплюнула сырой JSON вместо строки,
@@ -253,9 +267,10 @@ async def handler(event):
 
         try:
             while True:
-                global model_round_robin_index
-                model_round_robin_index += 1
-                current_model = config.AI_MODELS_POOL[model_round_robin_index % len(config.AI_MODELS_POOL)]
+                global model_request_no
+                model_request_no += 1
+                # current_model = config.AI_MODELS_POOL[model_request_no % len(config.AI_MODELS_POOL)]
+                current_model = random.choice(config.AI_MODELS_POOL)
                 message_sent = False
                 # PATCH 2: Полная изоляция блока генерации и отправки от падений контекстного менеджера
                 try:
@@ -265,7 +280,7 @@ async def handler(event):
                             openai_payload = list(message_history[chat_id])
 
                         try:
-                            print(f"[{chat_log_id}] Request #{model_round_robin_index} to API {current_model}...", flush=True)
+                            print(f"[{chat_log_id}] Request #{model_request_no} to API {current_model}...", flush=True)
                             response = await client_ai.chat.completions.create(
                                 model=current_model,
                                 messages=[{"role": "system", "content": SYSTEM_PROMPT}] + FEW_SHOT_EXAMPLES + openai_payload,
