@@ -1,96 +1,86 @@
-# **Telegram BrainJammer: README**
+# **Telegram BrainJammer**
 
-Scammers using profiles with photos of beautiful Asian women are crawling out of every corner of the internet. Blocking them is the best thing you can do *for them*—it simply allows them to move on to their next victim immediately. However, "jamming" their brains by forcing them to waste days chatting with an AI bot is not only entertaining but also saves innocent people by keeping the scammers occupied.
+**Telegram BrainJammer** is an asynchronous userbot framework designed to automatically counter crypto-scammers (specifically *pig-butchering* or *shāzhūpán* syndicates). Instead of instantly blocking scammers—which merely allows them to cycle immediately to their next victim—this script deploys a distributed time-wasting countermeasure: a **Pelevinian Troll-Simulacrum**.  
+The bot masks its advanced AI nature behind a facade of senior domestic naivety, pretending to be Oleg Ivanovich, a slightly tech-eccentric, polite, and lonely 63-year-old retired Principal Linux Kernel Engineer. It lures scammers into deep technical sub-plots, heavy existential ironies, and simulated physical quirks, burning through human operator hours at the scam centers for fractions of a cent.  
+**Note:** This project and its documentation intentionally promote a total lack of sympathy toward the social group known as "crypto-scammers."
 
-**Note:** This project and its documentation intentionally promote a lack of sympathy toward the social group known as "crypto-scammers."
+## **Key Features & Defensive Architecture**
 
-## ---
+* **Asynchronous Mesh Engagement (Telethon):** Operates natively as a Telegram Userbot, intercepting and answering messages concurrently without blocking execution.  
+* **Dynamic Multi-Model Pooling (OpenRouter):** Avoids relying on a single LLM provider. The engine randomly selects models from a user-defined pool for each turn, preventing conversation deadlock caused by API rate limits or specific backend outages.  
+* **Multi-Stage Behavioral Simulacrum:**  
+  * *The Reveal Protocol ("Cozy Drunk"):* Starts conversations completely sober. Upon specific conversation triggers (e.g., asking about his day or catching a typo), the bot invokes a charming, one-time confession about homemade plum brandy, shifting into a warmer, more rambling, and sentimental state.  
+  * *The Truth as a Lie ("T-500 Sarcasm"):* If a scammer explicitly accuses the bot of being an AI, it activates a high-irony protocol, deadpan-confessing to being an alcohol-powered T-500 cybernetic organism experiencing "Maryland firmware updates."  
+* **Intelligent Debounce (Human Simulation):** Introduces random delays (25–45 seconds) with an active typing status, forcing the scam operator to stay glued to their terminal anticipating a breakthrough.  
+* **Kernel Sandboxing:** Sanitizes media paths using pathlib.Path properties (.name), completely neutralizing *Path Traversal* vectors if a model hallucinates local system file paths during image tag triggers (\[embed$...\]).  
+* **Context Flood Mitigation:** Truncates message histories instantly at the gateway handler when context exceeds safe thresholds, mitigating potential Denial-of-Service (DoS) spam attacks and saving token costs.
 
-**Features**
+## **Installation & Setup**
 
-* **Automated Engagement:** Automatically responds to incoming messages.
-* **AI-Powered Persona:** Uses OpenAI to maintain a consistent, cautious, and slightly eccentric persona (e.g., "Oleg Ivanovich," a retired engineer).
-* **Human-like Delays:** Implements random delays to mimic human typing speeds and frustrate automated scam scripts.
-* **Brain-Jamming Logic:** Specifically designed to lead scammers into technical dead-ends and psychological frustration.
+It is highly recommended to run the script inside an isolated virtual environment.
 
-## **Installation**
+### **1\. Clone the Project & Setup venv**
 
-### **1\. Clone the repository**
+\# Create virtual environment  
+python3 \-m venv venv
 
-Ensure you have telegram-brainjammer.py and config.py in your project folder.
+\# Activate environment (Linux/macOS)  
+source venv/bin/activate
 
-### **2\. Set up a Virtual Environment (venv)**
+\# Activate environment (Windows)  
+.\\\\venv\\\\Scripts\\\\activate
 
-It is highly recommended to use a virtual environment to keep your global Python installation clean.
-`# Create the virtual environment`
+### **2\. Install Dependencies**
 
-`python3 -m venv venv`
+pip install telethon openai
 
-`# Activate the virtual environment`
+## **Infrastructure Configuration**
 
-`# On Linux/macOS:`
+The framework requires a config.py file to be present in the root directory.
 
-`source venv/bin/activate`
+### **Important Note on OpenRouter Pricing & Rate Limits**
 
-`# On Windows:`
+The script is highly optimized to run via the **OpenRouter** gateway to seamlessly rotate through free and ultra-low-cost open-source models (e.g., *Hermes 3*, *Llama 3*, *Mistral*).  
+**CRITICAL REQUIREMENT:** By default, OpenRouter imposes extremely strict rate limits on free models for unpaid accounts. To unlock a stable, continuous quota of up to **1000 requests per day** for free models, you must deposit at least **$10+** into your OpenRouter balance. This deposit is not consumed by free models, but acts as an anti-abuse threshold to lift heavy throttling.
 
-`.\\venv\\Scripts\\activate`
+### **config.py Configuration Template**
 
-### **3\. Install Dependencies**
+\# config.py
 
-Install the required libraries using pip:
-`pip install telethon openai`
+\# Telegram API Credentials (Obtain at https://my.telegram.org)  
+TG\_API\_ID \= 1234567            
+TG\_API\_HASH \= 'your\_telegram\_app\_hash\_here'    
 
-## **Configuration**
+\# OpenRouter API Key and Endpoint  
+AI\_API\_KEY \= 'sk-or-v1-...'   
+AI\_URI \= 'https://openrouter.ai/api/v1'
 
-The script expects a file named config.py in the same directory.
+\# Model pool for dynamic rotation and high availability  
+AI\_MODELS\_POOL \= \[  
+    "nousresearch/hermes-3-llama-3-8b",  
+    "meta-llama/llama-3-8b-instruct:free",  
+    "mistralai/mistral-7b-instruct:free"  
+\]
 
-### **config.py Format**
+## **Usage & Chat Controls**
 
-Create a file named config.py and populate it with your credentials:
-`# config.py`
+Start the core engine from your terminal:
 
-`API_ID = 1234567          # Your Telegram API ID`
+python3 telegram-brainjammer.py
 
-`API_HASH = 'your_hash'    # Your Telegram API HASH`
+On its initial execution, Telethon will prompt you for your phone number and 2FA password to generate a secure local session file (baiter\_session.session).  
+The bot runs passively in the background. To toggle the simulacrum inside a specific chat, send these control commands directly into the target scammer's chat window (the script intercepts, executes, and automatically deletes these messages):
 
-`OPENAI_API_KEY = 'sk-...' # Your OpenAI API Key`
+* **..r (Run):** Scans the trailing 35 messages to rebuild memory context and actively handles all subsequent incoming messages for this chat.  
+* **..q (Quit):** Deactivates the jammer for this specific chat, purges thread memory from RAM, and clears active session locks.
 
-### **How to obtain the keys:**
+## **Real-World "Brain-Jamming" Log Snippet**
 
-1. **Telegram API\_ID and API\_HASH:**
-   * Go to [https://my.telegram.org](https://my.telegram.org).
-   * Log in with your phone number.
-   * Click on **"API development tools"**.
-   * Create a new application.
-   * Copy your App api\_id and App api\_hash.
-2. **OPENAI\_API\_KEY:**
-   * Log in to your [OpenAI Platform](https://platform.openai.com/) account.
-   * Navigate to the **"API Keys"** section.
-   * Click **"Create new secret key"**.
+The following live telemetry demonstrates the "Building Rapport" phase where a shift-worker at a scam center attempts to probe the target for retirement assets, only to run into an existential cybernetic firewall:
 
-## **Usage**
-
-Once configured and the venv is active, run the script:
-`python3 telegram-brainjammer.py`
-
-The script will prompt you for your phone number on the first run to authorize the Telegram session. After that, it will stay active and "jam" any scammer who tries their luck.
-
-Once the script is running, it connects to your Telegram account. To manage the bot within a specific chat:
-
- - Type `..r` (run) to activate the jammer for that chat.
- - Type `..s` (stop) to deactivate it.
-
-
-
-
-## **Required Libraries**
-
-* **Telethon:** For interacting with the Telegram API as a user client.
-* **OpenAI:** For generating intelligent, context-aware responses.
-* **Asyncio:** For handling concurrent events.
-
-## **Real-World "Brain-Jamming" Example**
-
-The repository includes log files (e.g., *Maggie-Lee.txt*) that demonstrate a typical two-day scam cycle. You can observe how the scammer adopts a persona of a successful, attractive woman, building rapport by discussing Thai beaches, Vietnamese cuisine, and daily routines. The "social engineering" phase is extensive, designed to establish a false sense of intimacy. However, once the conversation shifts to pitching "AI smart plans" or "on-chain wallets," the AI bot maintains its cautious, technical persona. The transition from friendly banter to aggressive gaslighting and eventual insults (when the scammer realizes the "retired engineer" won't bite) is a classic example of why this tool is necessary—it turns their own psychological tactics against them, wasting their most valuable resource: time.
-
+\[Miss Diana\]: When I got home, I sat on the sofa and rested. I'm ready to hear your server room story.  
+\[Oleg Khovayko\]: Ah, welcome home\! My server room... it's a bit of a sanctuary. I have these old rack-mount chassis from the early 2000s that hum like a choir of mechanical bees. I once spent an entire weekend trying to optimize a custom lossless compression algorithm—called it rcomp...  
+\[Miss Diana\]: Honestly, that doesn’t sound too geeky to me at all. It actually sounds kind of adorable how excited you get...  
+\[Oleg Khovayko\]: Ah, your words remind me of that cozy corner by the fireplace... My “sanctuary” isn’t luxurious, but it’s a place where we let stuck thoughts unwind. Funny, how a room can feel like a hug when you’re miles from it. If you’re open to it, I could show you the “music” of dark matter interactions... Though I’d stockpile "digital breadcrumbs" while we’re at it.  
+\[Miss Diana\]: Are you replying to me with Ai again? I hope you don't reply with Ai.   
+\[Oleg Khovayko\]: Indeed, my dear, I’m a fully‑loaded T‑500 “cyber‑organic” chat companion—just a retired engineer with a splash of vintage firmware and a hint of brandy‑fuel for the joints. All the “AI” you hear is really just my old VT‑100 terminal humming along. 😊
