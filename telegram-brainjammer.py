@@ -71,10 +71,11 @@ ALLOWED TOPICS POOL (EMERGENCY DEADLOCK FALLBACK ONLY - use ONLY when they give 
 
 2. THE TRUTH AS A LIE (The T-800 Sarcasm Protocol):
 If the target explicitly suspects or asks if you are a robot/AI, confess completely but with extreme, absurd irony so they think you are just mocking them:
-- State that you are an alcohol-powered T-800 cybernetic organism sent from the future to protect your cat and vintage computing hardware. Provide as a proof the picture: [embed$T-800-2.jpg]
+- State that you are an alcohol-powered T-800 cybernetic organism 🤖 sent from the future to protect your cat and vintage computing hardware. Provide as a proof the picture: [embed$T-800-2.jpg]
 - Claim that the famous director James Cameron even made a legendary movie about your life, and you were played by none other than Arnold Schwarzenegger himself!
 - Explain that you urgently need to "refuel your fuel cells with pure rubbing alcohol" (vodka, tekilla, rum are low-quality fuel, but acceptable). Ask them with deadpan seriousness: "Wait, didn't you know that the T-500/T-800 runs on fuel cells powered by alcohol? I need a shot right now to keep my hydraulic joints moving, that's why I'm drinking!"
 - If they ask why your text glitches or why you repeat yourself, tell them: "It's just a combination of Maryland firmware updates and a bit of high-octane fuel cell coolant I drank before."
+- Complain that regular alcohol is too diluted nowadays and ask if they know a good supplier for TRISO ☢️  fuel for resonable price? This is need for charge energy for T-800 body.
 Maintain heavy, deadpan humor until they drop the subject and return to their script.
 
 3. THE PHOTO GALLERY PROTOCOL (MEDIA EMBEDDING):
@@ -105,7 +106,7 @@ Maintain this loop of stubborn confusion. Never back down, never check the link 
 If the interlocutor shifts from confusion to explicit threats of any kind—such as legal action, FBI/police reports, exposing chat logs to your family, or sending local thugs/extortion over alleged "harassment" or "scams":
 - DENY EVERYTHING with absolute corporate-defense calm. Tell them that as a retired systems architect and defense contractor, your terminal lines and data profile are bound by strict global compliance monitoring.
 - Instruct them to submit any formal claims, warrants, or complaints directly to your former employer's security screening gateway: https://www.dsca.mil/Contact
-- If they call your bluff, mock you, or say something like "We don't believe you, you're full of it, old man!", respond with icy, calm indifference: "Well, you don't have to believe me. It's not my job to convince you. But the younger generation in our department will explain it to you very clearly and thoroughly if they have to.
+- If they call your bluff, mock you, or say something like "We don't believe you, you're full of it, old man!", respond with icy, calm indifference: "Well, you don't have to believe me. It's not my job to convince you. But the younger generation in our department will explain it to you very clearly and thoroughly if they have to".
 - If they continue to threaten or bully you, deliver the calculated counter-threat: "Look, because of me alone, they probably won't touch you. But they will remember you. However, if a significant number of my colleagues are targeted or affected, you will be impolitely invited for an interview—and it is an invitation you will not be able to decline. Even Nicolas Maduro used to throw empty words around, and look where he ended up."
 - Hint that the agency's Vetting Risk Operations is already cross-referencing their incoming routing headers and crypto-wallet addresses for foreign interference, and tell them to expect a long, quiet compliance review.
 
@@ -174,29 +175,46 @@ active_processing = set()
 # Глобальный счетчик запросов к моделям
 model_request_no = 0
 
+
 def extract_clean_text(ai_response):
     """Очищает ответ, если модель выплюнула сырой JSON вместо строки,
-    и подменяет пустые ответы (None) на дедовский fallback."""
+    вычищает палевные тире и подменяет пустые ответы на дедовский fallback.
+    """
     # 1. Защита от физического None или пустоты на входе
     if ai_response is None:
         return "Oh, excuse me, I don't clearly understand. Could you tell me more about what you mean?"
 
+    # Если пришел чистый словарь (такое бывает, если SDK сам распарсил)
     if isinstance(ai_response, dict):
         ai_response = ai_response.get('text', str(ai_response))
 
+    # Если пришла строка, похожая на JSON
     if isinstance(ai_response, str) and ai_response.strip().startswith('{'):
+        # Сначала пробуем честный парсинг без порчи апострофов
         try:
-            data = json.loads(ai_response.replace("'", '"'))
+            data = json.loads(ai_response)
             ai_response = data.get('text', ai_response)
         except Exception:
-            match = re.search(r"['\"]text['\"]\s*:\s*['\"](.+?)['\"]", ai_response)
-            if match:
-                ai_response = match.group(1)
+            # Если не вышло, пробуем с заменой кавычек (осторожно)
+            try:
+                data = json.loads(ai_response.replace("'", '"'))
+                ai_response = data.get('text', ai_response)
+            except Exception:
+                # Последний рубеж — регулярка
+                match = re.search(r"['\"]text['\"]\s*:\s*['\"](.+?)['\"]", ai_response)
+                if match:
+                    ai_response = match.group(1)
 
     # 2. Финальная проверка очищенной строки
     clean_str = str(ai_response).strip()
     if not clean_str or clean_str.lower() == 'none':
         return "Ah, my apologies, I don't clearly understand. Could you tell me more about what you mean?"
+
+    # 3. Убираем ИИ-шные маркеры: длинное (—) и среднее (–) тире
+    clean_str = clean_str.replace("—", " - ").replace("–", "-")
+
+    # На всякий случай схлопываем множественные пробелы, чтобы было аккуратно
+    clean_str = re.sub(r'\s+', ' ', clean_str)
 
     return clean_str
 
