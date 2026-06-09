@@ -292,7 +292,7 @@ async def handler(event):
 
             active_processing.add(chat_id)
 
-        debounce_delay = random.randint(25, 45)
+        debounce_delay = random.randint(45, 80)
         print(f"[{chat_log_id}] Debounce for {debounce_delay}s...")
 
         # PATCH 1: Обертка для дебаунса
