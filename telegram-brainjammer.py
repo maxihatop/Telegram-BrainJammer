@@ -217,7 +217,9 @@ def extract_clean_text(ai_response):
     # На всякий случай схлопываем множественные пробелы, чтобы было аккуратно
     clean_str = re.sub(r'\s+', ' ', clean_str)
 
-    return clean_str
+    # Убираем пробелы по краям, затем кавычки/запятые слева, и финально зачищаем пробелы
+    return clean_str.strip().lstrip('"\',').strip()
+
 
 @tg_client.on(events.NewMessage())
 async def handler(event):
